@@ -188,7 +188,7 @@
 
                             </div>
                             <div class="pagination-wrapper">
-                            {{ $property->links('vendor.pagination.custom') }}
+                            
                             </div>
                         </div>
                     </div>

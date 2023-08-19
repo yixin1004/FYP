@@ -59,7 +59,10 @@
                                 <h3>RM{{ $property->lowest_price }}</h3>
                             </div>
                         </div>
-                        
+                        <ul class="other-option pull-right clearfix">
+                            <li><a aria-label="Compare" class="action-btn" id="{{ $property->id }}" onclick="addToCompare(this.id)"><i class="icon-12"></i></a></li>
+                            <li><a aria-label="Add To Wishlist" class="action-btn" id="{{ $property->id }}" onclick="addToWishList(this.id)" ><i class="icon-13"></i></a></li>
+                        </ul>
                     </div>
                 </div>
                 <div class="row clearfix">
@@ -400,8 +403,8 @@
                         <h4>RM{{ $item->lowest_price }}</h4>
                     </div>
                     <ul class="other-option pull-right clearfix">
-                        <li><a href="property-details.html"><i class="icon-12"></i></a></li>
-                        <li><a href="property-details.html"><i class="icon-13"></i></a></li>
+                        <li><a aria-label="Compare" class="action-btn" id="{{ $item->id }}" onclick="addToCompare(this.id)"><i class="icon-12"></i></a></li>
+                        <li><a aria-label="Add To Wishlist" class="action-btn" id="{{ $item->id }}" onclick="addToWishList(this.id)" ><i class="icon-13"></i></a></li>
                     </ul>
                 </div>
                  <p>{{ $item->short_descp }}</p>
