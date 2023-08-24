@@ -8,6 +8,10 @@
 				<nav class="page-breadcrumb">
 					<ol class="breadcrumb">
                     <a href="{{ route('agent.add.property') }}" class="btn btn-inverse-info"> Add Property    </a>
+                    &nbsp; &nbsp; &nbsp;
+                    <a href="{{ route('agent.import.property') }}" class="btn btn-inverse-warning"> Import    </a>
+                    &nbsp; &nbsp; &nbsp;
+                    <a href="{{ route('agent.export') }}" class="btn btn-inverse-danger"> Export   </a>
 					</ol>
 				</nav>
 

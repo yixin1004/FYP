@@ -22,6 +22,9 @@ use App\Models\State;
 use App\Models\Schedule;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\ScheduleMail;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\PropertyExport;
+use App\Imports\PropertyImport;
 
  
 class AgentPropertyController extends Controller
@@ -415,6 +418,31 @@ public function AgentUpdatePropertyThambnail(Request $request){
         return redirect()->back()->with($notification); 
 
     }// End Method  
+
+    public function AgentImportProperty(){
+
+        return view('agent.property.import_property');
+
+    }// End Method 
+
+    public function Export(){
+
+        return Excel::download(new PropertyExport, 'property.xlsx');
+
+    }// End Method 
+
+    public function Import(Request $request){
+
+        Excel::import(new PropertyImport, $request->file('import_file'));
+
+         $notification = array(
+           'message' => 'Property Imported Successfully',
+           'alert-type' => 'success'
+       );
+
+       return redirect()->back()->with($notification);
+
+   }// End Method
 
 
     public function BuyPackage(){

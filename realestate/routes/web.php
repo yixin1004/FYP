@@ -581,6 +581,15 @@ Route::middleware(['auth','roles:agent'])->group(function(){
         Route::get('/agent/message/details/{id}', 'AgentMessageDetails')
         ->name('agent.message.details');  
 
+        Route::get('/agent/import/property', 'AgentImportProperty')
+        ->name('agent.import.property');
+
+        Route::get('/agent/export', 'Export')
+        ->name('agent.export');
+
+        Route::post('/agent/import', 'Import')
+        ->name('agent.import');
+
 
         // Schedule Request Route 
         Route::get('/agent/schedule/request/', 'AgentScheduleRequest')
